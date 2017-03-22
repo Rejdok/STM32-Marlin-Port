@@ -1,0 +1,12 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018: непредвиденная ошибка при выполнении задачи "VCMessage".
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018: System.FormatException: Индекс (отсчитываемый от нуля) должен быть больше или равен нулю, но меньше размера списка аргументов.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в System.String.Format(IFormatProvider provider, String format, Object[] args)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в Microsoft.Build.Shared.ResourceUtilities.FormatString(String unformatted, Object[] args)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в Microsoft.Build.Utilities.TaskLoggingHelper.FormatString(String unformatted, Object[] args)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в Microsoft.Build.Utilities.TaskLoggingHelper.FormatResourceString(String resourceName, Object[] args)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в Microsoft.Build.Utilities.TaskLoggingHelper.LogErrorWithCodeFromResources(String messageResourceName, Object[] messageArgs)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в Microsoft.Build.CPPTasks.VCMessage.Execute()
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в Microsoft.Build.BackEnd.TaskExecutionHost.Microsoft.Build.BackEnd.ITaskExecutionHost.Execute()
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB4018:    в Microsoft.Build.BackEnd.TaskBuilder.<ExecuteInstantiatedTask>d__26.MoveNext()
