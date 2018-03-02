@@ -22,7 +22,7 @@ ADC_HandleTypeDef adc1Handler;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 void Error_Handler(void);
-static void MX_GPIO_Init(void);
+static void GPIO_Initalization(void);
 static void timerHeaterAndPwmInit(void);
 static void timer_usInit(void);
 static void timerStepperInit(void);
@@ -43,7 +43,7 @@ int main(void)
   SystemClock_Config();
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
+  GPIO_Initalization();
   MX_USB_DEVICE_Init();
   timerHeaterAndPwmInit();
   timerStepperInit();
@@ -255,7 +255,7 @@ static void timer_usInit(void)
         * EVENT_OUT
         * EXTI
 */
-static void MX_GPIO_Init(void)
+static void GPIO_Initalization(void)
 {
 	   GPIO_InitTypeDef initStruct;
 

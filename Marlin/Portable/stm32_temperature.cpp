@@ -1414,7 +1414,7 @@ void Temperature::isr() {
     #define ISR_STATICS(n) static unsigned char soft_pwm_ ## n
   #endif
 /*todo rewrite*/
-    /*пример не очень хорошего кода. здесь можно было объявить структуру и массив структур*/
+    /*пример не очень хорошего кода*/
   // Statics per heater
   ISR_STATICS(0);
   #if (HOTENDS > 1) || ENABLED(HEATERS_PARALLEL)
@@ -1632,7 +1632,7 @@ void Temperature::isr() {
 
   #endif // SLOW_PWM_HEATERS
 /*todo add multichannel adc mode*/
-
+//Почему не сделать в цикле?
   // Prepare or measure a sensor, each one every 12th frame
   switch (temp_state) {
     case PrepareTemp_0:

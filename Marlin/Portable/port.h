@@ -47,7 +47,7 @@ uint16_t getTimerValue(TIM_HandleTypeDef *timer);
 void stepperTimerPeriodUpdate(uint32_t value);
 bool digitalRead(uint8_t pin);
 void digitalWrite(uint8_t pin, uint8_t status);
-void analogWrite(uint8_t pin, uint8_t value);
+
 #define SET_INPUT(x)
 #define WRITE(pin, status) digitalWrite(pin, status)
 #define OUT_WRITE(pin,status) digitalWrite(pin, status)
@@ -56,6 +56,7 @@ void analogWrite(uint8_t pin, uint8_t value);
 #define READ(x) 0
 #define START_ADC(x) /*change of adc channels*/
 /*Заглушки*/
+void analogWrite(uint8_t pin, uint8_t value);
 #define LCD_MESSAGEPGM(x)
 #define LCD_ALERTMESSAGEPGM(x)
 #endif /* MARLIN_PORTABLE_LAYER */
