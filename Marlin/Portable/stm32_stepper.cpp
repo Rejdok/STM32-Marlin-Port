@@ -60,9 +60,12 @@
 #include "language.h"
 #include "cardreader.h"
 #include "speed_lookuptable.h"
-
+#ifdef STM32F407xx
 #include "stm32f4xx_it.h"
-
+#endif
+#ifdef STM32F103xB
+#include "stm32f1xx_it.h"
+#endif
 /*TODO зесь размещено объ€вление таймерного хендлера, надо убрать от сюда */
 extern TIM_HandleTypeDef TimerStepper, TimerHeaterAndPwm, Timer_usDelay;
 

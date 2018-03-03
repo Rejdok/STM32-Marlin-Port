@@ -46,14 +46,7 @@
   /* Includes ------------------------------------------------------------------*/
 
 /* USER CODE BEGIN Includes */
-//#include "stm32f4xx_3dprinter_misc.h"
-//#include "stm32f4xx_3dprinter_motor.h"
-//#include "stm32f4xx_3dprinter_uart.h"
-//#include "stm32f4xx_3dprinter_adc.h"
-//#include "stm32f4xx_3dprinter_sd.h"
-//#include "stm32f4xx_3dprinter_wifi.h"
-//#include "stm32f4xx_3dprinter_usb.h"
-//#include "motorcontrol.h"
+
 /* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/

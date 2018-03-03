@@ -30,8 +30,16 @@
 #include "thermistortables.h"
 #include "language.h"
 /*todo new inc*/
+#ifdef STM32F407xx
+#include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_it.h"
+#endif
+#ifdef STM32F103xB
+#include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
+#include "stm32f1xx_it.h"
+#endif
 #if ENABLED(BABYSTEPPING)
   #include "stepper.h"
 #endif

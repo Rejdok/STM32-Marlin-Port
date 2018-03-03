@@ -248,7 +248,14 @@ void clear_command_queue();
 void clamp_to_software_endstops(float target[3]);
 
 
+#ifdef STM32F407xx
+#include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
+#endif
+#ifdef STM32F103xB
+#include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
+#endif
 #define millis() port_millis()
 extern millis_t previous_cmd_ms;
 inline void refresh_cmd_timeout() { previous_cmd_ms = millis(); }

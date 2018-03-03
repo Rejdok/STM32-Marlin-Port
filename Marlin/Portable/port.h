@@ -1,6 +1,13 @@
 #ifndef MARLIN_PORTABLE_LAYER
 #define MARLIN_PORTABLE_LAYER
+
+#ifdef STM32F407xx
 #include "stm32f4xx_hal.h"
+#endif
+#ifdef STM32F103xB
+#include "stm32f1xx_hal.h"
+#endif
+
 
 #include "math.h"
 #include "string.h"

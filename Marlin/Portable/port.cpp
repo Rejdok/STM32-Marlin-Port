@@ -32,9 +32,9 @@ struct pinDefenition {
 pinDefenition pinMap[] = {
 /*Stepper pins order:
  * STEP 			-> DIR 				-> ENABLE*/
-{ GPIOD, GPIO_PIN_14 }, { GPIOD, GPIO_PIN_15 }, { GPIOG, GPIO_PIN_2 }, /*X axis motor*/
-{ GPIOG, GPIO_PIN_3 }, { GPIOG, GPIO_PIN_4 }, { GPIOG, GPIO_PIN_5 }, /*Y axis motor*/
-{ GPIOG, GPIO_PIN_6 }, { GPIOG, GPIO_PIN_7 }, { GPIOG, GPIO_PIN_8 }, /*Z axis motor*/
+//{ GPIOD, GPIO_PIN_14 }, { GPIOD, GPIO_PIN_15 }, { GPIOG, GPIO_PIN_2 }, /*X axis motor*/
+//{ GPIOG, GPIO_PIN_3 }, { GPIOG, GPIO_PIN_4 }, { GPIOG, GPIO_PIN_5 }, /*Y axis motor*/
+//{ GPIOG, GPIO_PIN_6 }, { GPIOG, GPIO_PIN_7 }, { GPIOG, GPIO_PIN_8 }, /*Z axis motor*/
 { GPIOE, GPIO_PIN_7 }, { GPIOE, GPIO_PIN_8 }, { GPIOE, GPIO_PIN_9 }, /*Extruder 1 motor*/
 { GPIOE, GPIO_PIN_10 }, { GPIOE, GPIO_PIN_11 }, { GPIOE, GPIO_PIN_12 }, /* Extruder 2 motor*/
 { GPIOE, GPIO_PIN_13 }, /*heater 0*/
