@@ -65,9 +65,9 @@ void MX_TIM1_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   TimerHeaterAndPwm.Instance = TIM1;
-  TimerHeaterAndPwm.Init.Prescaler = 0;
+  TimerHeaterAndPwm.Init.Prescaler = 36;
   TimerHeaterAndPwm.Init.CounterMode = TIM_COUNTERMODE_UP;
-  TimerHeaterAndPwm.Init.Period = 0;
+  TimerHeaterAndPwm.Init.Period = 2000;
   TimerHeaterAndPwm.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   TimerHeaterAndPwm.Init.RepetitionCounter = 0;
   TimerHeaterAndPwm.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -97,9 +97,9 @@ void MX_TIM2_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   TimerStepper.Instance = TIM2;
-  TimerStepper.Init.Prescaler = 0;
+  TimerStepper.Init.Prescaler = 72;
   TimerStepper.Init.CounterMode = TIM_COUNTERMODE_UP;
-  TimerStepper.Init.Period = 0;
+  TimerStepper.Init.Period = 2000;
   TimerStepper.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   TimerStepper.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&TimerStepper) != HAL_OK)
@@ -128,9 +128,9 @@ void MX_TIM3_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   Timer_usDelay.Instance = TIM3;
-  Timer_usDelay.Init.Prescaler = 0;
+  Timer_usDelay.Init.Prescaler = 72;
   Timer_usDelay.Init.CounterMode = TIM_COUNTERMODE_UP;
-  Timer_usDelay.Init.Period = 0;
+  Timer_usDelay.Init.Period = 0xFFFF;
   Timer_usDelay.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   Timer_usDelay.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&Timer_usDelay) != HAL_OK)
