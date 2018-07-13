@@ -46,8 +46,9 @@
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+
 #include "stm32f1xx_hal.h"
+#include "main.h"
 #include "adc.h"
 #include "tim.h"
 #include "usb_device.h"
@@ -108,21 +109,20 @@ int main(void)
   MX_TIM3_Init();
 
   /* USER CODE BEGIN 2 */
-
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while(hUsbDeviceFS.dev_state!=3)
-	HAL_Delay(500);
-	setup();
-	while (1)
-	{
-	  loop();
-	  /* USER CODE END WHILE */
-	}
-  /* USER CODE END 3 */
+  while(hUsbDeviceFS.dev_state!=3) HAL_Delay(500);
 
+  setup();
+  while (1)
+  {
+    loop();
+    /* USER CODE END WHILE */
+  }
+  /* USER CODE END 3 */
 }
 
 /** System Clock Configuration

@@ -8,9 +8,16 @@
 #include "stm32f1xx_hal.h"
 #endif
 
-
 #include "math.h"
 #include "string.h"
+
+
+struct _pinDefenition {
+		GPIO_TypeDef* port;
+		uint16_t pin;
+};
+typedef struct _pinDefenition pinDefenition;
+
 /*CPU frequency*/
 uint32_t portGetCPUFrequency();
 extern uint32_t FREQU;
@@ -22,6 +29,7 @@ extern uint32_t FREQU;
 #define LOW 0
 #define HIGH 1
 typedef uint8_t byte;
+//typedef uint32_t bool;
 typedef bool boolean;
 
 
@@ -62,7 +70,7 @@ void digitalWrite(uint8_t pin, uint8_t status);
 #define SET_OUTPUT(PIN)
 #define READ(x) 0
 #define START_ADC(x) /*change of adc channels*/
-/*Заглушки*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 void analogWrite(uint8_t pin, uint8_t value);
 #define LCD_MESSAGEPGM(x)
 #define LCD_ALERTMESSAGEPGM(x)

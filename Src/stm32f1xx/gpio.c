@@ -49,6 +49,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "gpio.h"
+
+typedef uint32_t bool;
+#include <port.h>
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
@@ -60,6 +63,8 @@
 
 /* USER CODE END 1 */
 
+extern pinDefenition pinMap[];
+
 /** Configure pins as 
         * Analog 
         * Input 
@@ -69,12 +74,39 @@
 */
 void MX_GPIO_Init(void)
 {
+  int i;
+  GPIO_InitTypeDef GPIO_InitStruct;
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+
+  /*Configure GPIO pin : PB9 */
+  GPIO_InitStruct.Pin = GPIO_PIN_9;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+// digital Output
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB1 (Led)*/
+  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+// digital Output
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  for(i=0; i<17; i++){
+    GPIO_InitStruct.Pin = pinMap[i].pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    // digital Output
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(pinMap[i].port, &GPIO_InitStruct);
+  }
 
 }
 
