@@ -2,33 +2,41 @@
 
 extern TIM_HandleTypeDef TimerStepper;
 
+#ifdef STM32F407xx
 uint32_t FREQU = 168000000;
+#endif
+#ifdef STM32F103xB
+uint32_t FREQU = 76000000;
+#endif
 /*Returns CPU Frequency*/
 uint32_t portGetCPUFrequency() {
 	uint32_t rez = HAL_RCC_GetSysClockFreq();
-	if ( rez == 168000000 ) {
+	//if ( rez == 168000000 ) {
 		return rez;
-	}/*Just for debugg*/
-	while ( 1 ) {
-	}
+	//}/*Just for debugg*/
+	//while ( 1 ) {
+	//}
 }
 
-/*Todo придумать удобную систему выбора портов... возможно как в ардуино
- * придумать, как сделать проверку пинов в конфиге*/
+/*Todo пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ... пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 
 /*TODO stepper pins definitions*/
-struct pinDefenition {
-		GPIO_TypeDef* port;
-		uint16_t pin;
-};
+//struct pinDefenition {
+//		GPIO_TypeDef* port;
+//		uint16_t pin;
+//};
 
 #define steppersCount 5
-#define portPinCount (sizeof(pinMap)/sizeof(pinMap[0]))
 
 #define CHECK(PORT, PIN) PORT ## PIN
 #define PIN(PORT, PIN) (PROT, PIN)
 
 /*todo add heater an fan pins*/
+#ifdef STM32F103xB
+extern pinDefenition pinMap[];
+extern int portPinCount;
+#else
 pinDefenition pinMap[] = {
 /*Stepper pins order:
  * STEP 			-> DIR 				-> ENABLE*/
@@ -40,6 +48,8 @@ pinDefenition pinMap[] = {
 { GPIOE, GPIO_PIN_13 }, /*heater 0*/
 { GPIOE, GPIO_PIN_14 } /*FAN */
 };
+#define portPinCount (sizeof(pinMap)/sizeof(pinMap[0]))
+#endif
 
 bool digitalRead(uint8_t pin) {
 	uint8_t curpin = pin - 1;
